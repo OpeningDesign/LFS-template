@@ -56,11 +56,11 @@ Git LFS should print a help text, which shows everything is properly installed.
 
 #### 5. Testing with this repo
 
-This repo is configured with LFS. The [test file.FCStd](test file.FCStd) file is present in the repo, but not actually there. It is on a Dropbox folder. To test, ask [@yorikvanhavre](https://github.com/yorikvanhavre) for a Dropbox share link.
+This repo is configured with LFS. The [test file.FCStd](test%20file.FCStd) file is present in the repo, but not actually there. It is on a Dropbox folder. To test, ask [@yorikvanhavre](https://github.com/yorikvanhavre) for a Dropbox share link.
 
 1. Make sure you have obtained the the Dropbox link, and downloaded or synced the folder contents somewhere.
 2. Clone this repo: `git clone https://github.com/yorikvanhavre/LFS-templte`
-3. Verify that the [test file.FCStd](test file.FCStd) contains text
+3. Verify that the [test file.FCStd](test%20file.FCStd) contains text
 3. Set up LFS and folderstore:
 ```
 git config --add lfs.customtransfer.lfs-folder.path "C:/path/to/lfs-folderstore.exe"
@@ -69,7 +69,7 @@ git config --add lfs.standalonetransferagent lfs-folder
 git config lfs.url "https://localhost"
 ```
 4. Retrigger an update: `git reset --hard main`
-5. Verift that the  [test file.FCStd](test file.FCStd) now is an actual FreeCAD file that can be opened with FreeCAD.
+5. Verift that the  [test file.FCStd](test%20file.FCStd) now is an actual FreeCAD file that can be opened with FreeCAD.
 
 
 
