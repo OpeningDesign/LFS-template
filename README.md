@@ -54,9 +54,28 @@ git lfs
 
 Git LFS should print a help text, which shows everything is properly installed.
 
+#### 5. Testing with this repo
+
+This repo is configured with LFS. The [test file.FCStd](test file.FCStd) file is present in the repo, but not actually there. It is on a Dropbox folder. To test, ask @yorikvanhavre for a Dropbox share link.
+
+1. Make sure you have obtained the the Dropbox link, and downloaded or synced the folder contents somewhere.
+2. Clone this repo: `git clone https://github.com/yorikvanhavre/LFS-templte`
+3. Verify that the [test file.FCStd](test file.FCStd) contains text
+3. Set up LFS and folderstore:
+```
+git config --add lfs.customtransfer.lfs-folder.path "C:/path/to/lfs-folderstore.exe"
+git config --add lfs.customtransfer.lfs-folder.args "C:/path/to/dropbox/shared_folder"
+git config --add lfs.standalonetransferagent lfs-folder
+git config lfs.url "https://localhost"
+```
+4. Retrigger an update: `git reset --hard main`
+5. Verift that the  [test file.FCStd](test file.FCStd) now is an actual FreeCAD file that can be opened with FreeCAD.
+
 
 
 ## Working with Git-LFS and LFS-folderstore
+
+Below is a more detailed explanation:
 
 Make sure you have everything you need: either a test repo and some large files to test, and a Dropbox/Nextcloud folder set up (share it with others.
 
@@ -105,7 +124,7 @@ git config lfs.url "https://localhost"
 ```
 
 
-* With LFS now properly set up,  retrigger the download of the LFS files:`git reset --hard master` The LFS files will now be copied from your Dropbox folder to your Git repo folder.
+* With LFS now properly set up,  retrigger the download of the LFS files:`git reset --hard master` (or `main`). The LFS files will now be copied from your Dropbox folder to your Git repo folder.
 
 #### 4. Notes
 
