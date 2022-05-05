@@ -73,7 +73,8 @@ Starting a new repository is the easiest case. The instructions below also work 
 
 * Create some commits with some big files (.rvt files for example, to follow above rules)
 * Add your normal git remote using `git remote add origin <url>`, as instructed on GitHub, Gitlab, etc
-* Run these commands to configure your LFS folder:
+* Run these commands to configure your LFS folder (on Linux, replace lfs-folderstore.exe with lfs-folderstore)
+
 ```
 git config --add lfs.customtransfer.lfs-folder.path lfs-folderstore.exe
 git config --add lfs.customtransfer.lfs-folder.args "C:/path/to/dropbox/folder"
