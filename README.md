@@ -56,7 +56,7 @@ Git LFS should print a help text, which shows everything is properly installed.
 
 #### 5. Testing with this repo
 
-This repo is configured with LFS. The [test file.FCStd](test file.FCStd) file is present in the repo, but not actually there. It is on a Dropbox folder. To test, ask @yorikvanhavre for a Dropbox share link.
+This repo is configured with LFS. The [test file.FCStd](test file.FCStd) file is present in the repo, but not actually there. It is on a Dropbox folder. To test, ask [@yorikvanhavre](https://github.com/yorikvanhavre) for a Dropbox share link.
 
 1. Make sure you have obtained the the Dropbox link, and downloaded or synced the folder contents somewhere.
 2. Clone this repo: `git clone https://github.com/yorikvanhavre/LFS-templte`
