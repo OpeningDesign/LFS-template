@@ -76,15 +76,16 @@ Starting a new repository is the easiest case. The instructions below also work 
 * Run these commands to configure your LFS folder (on Linux, replace lfs-folderstore.exe with lfs-folderstore)
 
 ```
-git config --add lfs.customtransfer.lfs-folder.path lfs-folderstore.exe
+git config --add lfs.customtransfer.lfs-folder.path "C:/path/to/lfs-folderstore.exe"
 git config --add lfs.customtransfer.lfs-folder.args "C:/path/to/dropbox/folder"
 git config --add lfs.standalonetransferagent lfs-folder
+git config lfs.url "https://localhost"
 ```
 * Push your changes: `git push origin master`. This will also copy the LFS files from your Git repo folder to your Dropbox folder.
 
 **Notes for Windows users:**
 
-* As shown above, even on Windows, use forward slashes for path separators, instead of backslashes
+* As shown above, even on Windows, **use forward slashes** for path separators, instead of backslashes
 * If you have spaces in your path, add **additional single quotes** around the path, e.g. `git config --add lfs.customtransfer.lfs-folder.args "'C:/path with spaces/folder'"`
 
 #### 3. Cloning an existing repo
@@ -97,9 +98,10 @@ It's not that hard to resolve though, you just need a couple of extra steps afte
 * Enter your newly cloned repo: `cd <folder>` 
 * Configure as with a new repo:
 ```
-git config --add lfs.customtransfer.lfs-folder.path lfs-folderstore.exe
+git config --add lfs.customtransfer.lfs-folder.path "C:/path/to/lfs-folderstore.exe"
 git config --add lfs.customtransfer.lfs-folder.args "C:/path/to/dropbox/folder"
 git config --add lfs.standalonetransferagent lfs-folder
+git config lfs.url "https://localhost"
 ```
 
 
@@ -109,7 +111,7 @@ git config --add lfs.standalonetransferagent lfs-folder
 
 * The shared folder is, to git, still a remote location. It only interacts with it during `fetch`, `pull` and `push`. Committing a LFS file is not enough to have it copied to the Dropbox folder. You also need to push as if it was a remote.
 * Actual copies are always made in all cases, even if your Git repo folder is also managed by Dropbox. No links are used ever. Note that Dropbox and most other file storing platforms actually detect identical files and store them only once on their servers (this is actually even happening between different users...)
-* You can use one single Dropbox folder for all your LFS-handled files, or different ones. Only make sure all files have different names.
+* You can use one single Dropbox folder for all your LFS-handled files, or different ones. Files are not saved under their actual name but under a git commit id number, so there is no risk of overwriting.
 
 
 
